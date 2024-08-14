@@ -1,0 +1,165 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    @apply font-open-sans; 
+}
+
+/* Default state */
+.tooltip-content {
+    opacity: 0;
+    transition: opacity 0.1s ease-in-out;
+}
+
+/* When hovered */
+.group:hover .tooltip-content {
+    opacity: 1;
+    transition-delay: 500ms; /* Delay only when showing */
+}
+
+/* Default state */
+.flower-label-tooltip {
+    opacity: 0;
+    transition: opacity 0.1s ease-in-out;
+}
+
+/* When hovered */
+.group:hover .flower-label-tooltip {
+    opacity: 0.85;
+    transition-delay: 500ms; /* Delay only when showing */
+}
+
+.small-header {
+    @apply font-roboto text-xs uppercase font-semibold tracking-widest;
+}
+
+.primary-button {
+    @apply bg-accent-darkpink border-[3px] border-accent-pink text-white tracking-wider font-roboto text-small font-semibold uppercase rounded-primary-button py-2;
+    @apply hover:text-accent-darkpink hover:bg-white transition ease-in-out duration-300;
+}
+
+.secondary-button {
+    @apply bg-white border-[3px] border-accent-pink text-accent-darkpink tracking-wider font-roboto text-small font-semibold uppercase rounded-primary-button py-2;
+    @apply hover:text-white hover:bg-accent-darkpink transition ease-in-out duration-300;
+}
+
+.small-button {
+    @apply text-accent-darkpink bg-accent-lightpink rounded-small-button hover:bg-accent-lightpink-hover transition ease-in-out duration-300;
+}
+
+.dropdown-stats {
+    @apply text-accent-darkpink bg-accent-lightpink rounded-container hover:bg-accent-lightpink-hover flex flex-row items-center text-base font-medium capitalize;
+    @apply transition ease-in-out duration-300;
+}
+
+.ql-tooltip, .ql-picker {
+    z-index: 9999;
+}
+
+.fade-out {
+    position: relative;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 70%, rgba(255, 255, 255, 1) 100%);
+}
+
+.fade-out::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 20%; 
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+}
+
+/* For overflowing text */
+.group:hover .scroll-text {
+    animation: scroll-left 10s linear infinite;
+    cursor: auto;
+}
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+
+}
+
+.fade-out-horizontal {
+    position: relative;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 70%, rgba(255, 255, 255, 1) 100%);
+}
+
+.fade-out-horizontal::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    right: 0;
+    width: 20%; 
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+}
+
+/* Quill editor customization */
+.custom-quill .ql-toolbar .ql-stroke {
+    fill: none;
+    stroke: theme('colors.accent-pink') !important;
+}
+
+.custom-quill .ql-toolbar .ql-fill {
+    fill: theme('colors.accent-pink') !important;
+    stroke: none;
+}
+
+.custom-quill .ql-toolbar .ql-picker-label,
+.custom-quill .ql-toolbar .ql-picker-item {
+    color: theme('colors.accent-pink') !important; /* Default text color */
+}
+
+.custom-quill .ql-toolbar .ql-picker-label:hover,
+.custom-quill .ql-toolbar .ql-picker-item:hover,
+.custom-quill .ql-toolbar .ql-picker-label.ql-active,
+.custom-quill .ql-toolbar .ql-picker-item.ql-selected {
+    color: theme('colors.accent-darkpink') !important; /* Text color on hover and active */
+    background-color: transparent !important; /* Ensure no background color */
+}
+
+.custom-quill .ql-toolbar button:hover .ql-stroke,
+.custom-quill .ql-toolbar .ql-picker-label:hover .ql-stroke,
+.custom-quill .ql-toolbar .ql-picker-item:hover .ql-stroke {
+    fill: none;
+    stroke: theme('colors.accent-darkpink') !important;
+}
+
+.custom-quill .ql-toolbar button:hover .ql-fill,
+.custom-quill .ql-toolbar .ql-picker-label:hover .ql-fill,
+.custom-quill .ql-toolbar .ql-picker-item:hover .ql-fill {
+    fill: theme('colors.accent-darkpink') !important;
+    stroke: none;
+}
+
+.custom-quill .ql-toolbar button.ql-active .ql-stroke,
+.custom-quill .ql-toolbar .ql-picker-label.ql-active .ql-stroke,
+.custom-quill .ql-toolbar .ql-picker-item.ql-selected .ql-stroke {
+    fill: none;
+    stroke: theme('colors.accent-darkpink') !important;
+}
+
+.custom-quill .ql-toolbar button.ql-active .ql-fill,
+.custom-quill .ql-toolbar .ql-picker-label.ql-active .ql-fill,
+.custom-quill .ql-toolbar .ql-picker-item.ql-selected .ql-fill {
+    fill: theme('colors.accent-darkpink') !important;
+    stroke: none;
+}
+
+.custom-quill .ql-toolbar {
+    border: none !important;
+}
+
+.ql-container {
+    @apply rounded-xl;
+    border: 1px solid #e3e3e3 !important;
+}
