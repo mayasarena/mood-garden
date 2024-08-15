@@ -1,6 +1,6 @@
-# Mood Diary 🌸
+# Mood Garden 🌸
 
-An interactive 3D diary desktop app that allows users to track their daily mood with visual plants and notes, built with React and React Three Fiber.
+An interactive diary and mood-tracking desktop app that allows users to track their daily mood with visual plants and notes, built with React and React Three Fiber.
 
 ### Under Construction 🚧
 
