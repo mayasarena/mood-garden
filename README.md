@@ -18,7 +18,7 @@ An interactive 3D diary desktop app that allows users to track their daily mood 
 
 ## Tech Stack
 
-- **Frontend**: React, React Three Fiber, Tailwind CSS, Framer Motion
+- **Frontend**: React, React Three Fiber, Tailwind CSS, Framer Motion, Google OAuth for user authentication
 - **Rich Text Editor**: React Quill (custom toolbar and styling)
 - **Backend**: Node.js, Express, PostgreSQL
 - **Deployment**: In Progress
